@@ -4,7 +4,8 @@ body {
     font-size: 15px;
     color: black;
     line-height: 1.6;
-    
+
+}
 
 *,
 *::before,
@@ -24,11 +25,13 @@ body {
     height: 100vh;
     padding-top: 30px;
     border-top: 1px;
+    padding: auto;
+    
 }
 
 .header {
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
