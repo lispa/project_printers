@@ -2,7 +2,9 @@
     width: 32%;
     margin-left: 1%;
     }
-
+.my-2 {
+    margin-left: auto;
+}
  /* body {
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
