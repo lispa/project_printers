@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 06 2021 г., 00:38
--- Версия сервера: 8.0.19
--- Версия PHP: 7.4.14
+-- Время создания: Апр 06 2021 г., 14:51
+-- Версия сервера: 5.7.31
+-- Версия PHP: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,39 +24,39 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `printers`
+--
+
+DROP TABLE IF EXISTS `printers`;
+CREATE TABLE IF NOT EXISTS `printers` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `SERIAL_NUMBER` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `IP` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `MODEL` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `LOCATION` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `COUNTER_PRINT` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `COUNTER_SCAN` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `users`
 --
 
-CREATE TABLE `users` (
-  `ID` int NOT NULL,
-  `LOGIN` varchar(256) NOT NULL,
-  `PASSWORD` varchar(256) NOT NULL,
-  `NAME` varchar(256) DEFAULT NULL,
-  `EMAIL` varchar(256) DEFAULT NULL,
-  `DATE_CREATED` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `LOGIN` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `PASSWORD` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `NAME` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `EMAIL` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `DATE_CREATED` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `LOGIN_INDEX` (`LOGIN`),
+  UNIQUE KEY `EMAIL_INDEX` (`EMAIL`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Индексы сохранённых таблиц
---
-
---
--- Индексы таблицы `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `LOGIN_INDEX` (`LOGIN`),
-  ADD UNIQUE KEY `EMAIL_INDEX` (`EMAIL`);
-
---
--- AUTO_INCREMENT для сохранённых таблиц
---
-
---
--- AUTO_INCREMENT для таблицы `users`
---
-ALTER TABLE `users`
-  MODIFY `ID` int NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
