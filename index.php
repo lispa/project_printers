@@ -18,8 +18,11 @@
                     <? require "blocks/card.php"?>
         </div>
         </div>
+    
+    <!-- <? require "bloks/print.php" ?> -->
 
     <? require "blocks/footer.php"?>
+    
     
 </body>
 </html>
