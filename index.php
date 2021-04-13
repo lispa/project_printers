@@ -10,6 +10,7 @@
         <title>Printers</title>
 </head>
 <body>
+    <? require "blocs/login.php" ?>
 
     <? require "blocks/header.php"?>
         <div class="container mt-5">

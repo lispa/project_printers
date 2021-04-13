@@ -14,7 +14,7 @@ endforeach; ?> -->
         </div>
         <div class="card-body">
             <img src="img/<?=$file?>" class="img-thumbnail">
-            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Котики</button>
+            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Test</button>
         </div>
     </div>
 <?php endforeach; ?>
